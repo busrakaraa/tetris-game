@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     }
   
-    //assign functions to keyCodes
+    //assign functions to keyCodes (https://keycode.info/)
     function control(e) {
       if(e.keyCode === 37) {
         moveLeft()
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   
-    //move the tetromino left, unless is at the edge or there is a blockage
+    //move the tetromino to the left side of the game area, unless is at the edge or there is a blockage
     function moveLeft() {
       undraw()
       const isAtLeftEdge = current.some(index => (currentPosition + index) % width === 0)
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   
     
-    ///FIX ROTATION OF TETROMINOS A THE EDGE 
+    ///Fix the rotation of the tetrominoes 
     function isAtRight() {
       return current.some(index=> (currentPosition + index + 1) % width === 0)  
     }
